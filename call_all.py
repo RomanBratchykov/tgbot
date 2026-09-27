@@ -3,9 +3,11 @@ from telegram import Update
 from telegram.constants import ParseMode
 from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, CommandHandler, filters
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 TOKEN = os.environ["BOT_TOKEN"]
-DB = "users.db"
+DB = "/data/users.db"
 
 def init_db():
     con = sqlite3.connect(DB)
